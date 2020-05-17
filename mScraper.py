@@ -6,6 +6,9 @@ import warnings
 import opengraph
 import AdvancedHTMLParser
 
+global message
+message = " \nmScraper v1.02 by onkz - https://github.com/onkz \n-------------------- \nUsage: \n    --plain <id> = Fetch plain song data. \n    --cover <id> = Fetch song cover art. \n    --json <id> = Fetch JSON song data. \n    --mp3 <id> = Fetch song mp3 link. \n "
+
 def mParser(x):
 	parser_apiv1 = AdvancedHTMLParser.AdvancedHTMLParser()
 	parser_public = AdvancedHTMLParser.AdvancedHTMLParser()
@@ -19,30 +22,31 @@ def mParser(x):
 	parser_public.parseStr(m_data_public)
 	m_data_raw = parser_apiv1.getAllNodes()
 	m_data_opengraph_raw = opengraph.OpenGraph(html=m_data_public)
-	# m_data_opengraph_json = m_data_opengraph_raw.to_json()
 	m_data_opengraph_json = (json.loads((str(m_data_opengraph_raw)).replace("\'", "\"")))
 	m_data_file_mp3 = parser_apiv1.getElementsByTagName("source")
-	#
 	# useful variables list:
-	#
-	# m_data 		- [raw aHTMLp] all page data.
-	# m_data_song		- [raw aHTMLp] the artist + song name.
-	# m_data_file_image	- [raw aHTMLp] the link to the song cover artwork.
+	# m_data_apiv1 		- [raw aHTMLp] all page data from embedded.
+	# m_data_public		- [raw aHTMLp] all page data from song page.
 	# m_data_file_mp3	- [raw aHTMLp] the link to the song mp3 file.
-	# m_name_artist		- parsed artist name.
-	# m_name_song		- parsed song name.
-	#
-	if x == 5:
-		print(m_data_opengraph_json['title'])
-		print((str(m_data_file_mp3)[47:])[:-12])
-		print(m_data_opengraph_json['image'])
-	elif x == 7:
-		print(m_data_opengraph_json)
-		print(m_data_file_mp3)
-	elif x == 9:
-		print(m_data_file_mp3)
+	jsonNameVar = "{\'name\': \'"
+	jsonCoverVar = "\', \'cover\': \'"
+	jsonSongVar = "\', \'mp3\': \'"
+	jsonVar = (jsonNameVar + m_data_opengraph_json['title'] + jsonCoverVar + m_data_opengraph_json['image'] + jsonSongVar + ((str(m_data_file_mp3)[47:])[:-12]) + "\'}")
+	if len((str(m_data_file_mp3)[47:])[:-12]) > 10:
+		if x == 5:
+			print(m_data_opengraph_json['title'])
+			print((str(m_data_file_mp3)[47:])[:-12])
+			print(m_data_opengraph_json['image'])
+		elif x == 7:
+			print(jsonVar)
+		elif x == 9:
+			print(m_data_opengraph_json['image'])
+		elif x == 11:
+			print((str(m_data_file_mp3)[47:])[:-12])
+		else:
+			print(" \nError: Argument was not passed correctly. Restart mScraper. \n " + message)
 	else:
-		print("Error: Argument was not passed correctly. Restart mScraper.")
+		print(" \nError: This song is either a Matter Artist Club song, or it does not exist. \n " + message)
 
 def run(x):
 	with warnings.catch_warnings():
@@ -54,11 +58,11 @@ if len(sys.argv) > 1:
 		run(5)
 	elif sys.argv[1] == "--json" and int(sys.argv[2]) > 0:
 		run(7)
-	elif sys.argv[1] == "--mp3" and int(sys.argv[2]) > 0:
+	elif sys.argv[1] == "--cover" and int(sys.argv[2]) > 0:
 		run(9)
+	elif sys.argv[1] == "--mp3" and int(sys.argv[2]) > 0:
+		run(11)
 	else:
-		print(" \nmScraper v0.97 by onkz - https://github.com/onkz \n-------------------- \nusage: \n    --plain <id> = fetch plain song data \n    --json <id> = fetch JSON song data \n    --mp3 <id> = fetch song mp3 link \n ")
+		print(" \nError: Invalid arguments given. Restart mScraper. \n " + message)
 else:
-	print(" \nmScraper v0.97 by onkz - https://github.com/onkz \n-------------------- \nusage: \n    --plain <id> = fetch plain song data \n    --json <id> = fetch JSON song data \n    --mp3 <id> = fetch song mp3 link \n ")
-
-
+	print(message)
