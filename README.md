@@ -24,10 +24,9 @@ As of v1.02, JSON output is now fixed and working as intended.
 * mScraper works on Linux/macOS - it doesn't run properly on Windows hosts.
 
 ## Upcoming Features
-##### Version v1.1
-* Automatic installation script for Debian/Ubuntu.
-##### Version v2.0
+##### Version 2
 * Full compatibility with Windows hosts.
 * Automatic installation script for Windows hosts.
-* Ability to store output into text files.
+* Automatic installation script for Debian/Ubuntu.
+* Ability to store mScraper output into text files.
 * Ability to output only song cover artwork with "--cover".
