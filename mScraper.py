@@ -46,7 +46,7 @@ def mParser(x):
 		else:
 			print(" \nError: Argument was not passed correctly. Restart mScraper. \n " + message)
 	else:
-		print(" \nError: This song is either a Matter Artist Club song, or it does not exist. \n " + message)
+		print(" \nError: This song is either a Matter Artist Club song, or this song does not exist. \n " + message)
 
 def run(x):
 	with warnings.catch_warnings():
