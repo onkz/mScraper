@@ -18,14 +18,16 @@ mScraper.py   --mp3 <id> - fetch MP3 from specified song ID.
 * OpenGraph
 * AdvancedHTMLParser
 
-## Known Issues
+## Known Issues (as of v0.97)
 * mScraper works on Linux/macOS - it doesn't run properly on Windows hosts.
+* The --json flag works, but the output is in AdvancedHTMLParser form.
+* JSON output is not formatted correctly.
 
 ## Upcoming Features
-##### Version v1.0
+##### Version v1.00
 * Automatic installation script for Debian/Ubuntu.
 * Polished & corrected JSON output.
-##### Version v2.0
+##### Version v2.00
 * Full compatibility with Windows hosts.
 * Automatic installation script for Windows hosts.
 * Ability to store output into text files.
