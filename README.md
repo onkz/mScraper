@@ -7,9 +7,11 @@ The purpose of this program is to provide Matter integration functionality to an
 mScraper was developed in Python 3. No guarantee of anything working in Python 2.
 ```
 mScraper.py --plain <id> - fetch full song data from ID.  
-mScraper.py  --json <id> - fetch song data in JSON format.  
-mScraper.py   --mp3 <id> - fetch MP3 from specified song ID.
+mScraper.py --cover <id> - fetch cover art from song ID.
+mScraper.py  --json <id> - fetch data in JSON format.  
+mScraper.py   --mp3 <id> - fetch MP3 from song ID.
 ```
+As of v1.02, JSON output is now fixed and working as intended.
 
 ## Dependencies
 #### mScraper requires these libraries to be installed:
@@ -18,16 +20,13 @@ mScraper.py   --mp3 <id> - fetch MP3 from specified song ID.
 * OpenGraph
 * AdvancedHTMLParser
 
-## Known Issues (as of v0.97)
+## Known Issues (as of v1.02)
 * mScraper works on Linux/macOS - it doesn't run properly on Windows hosts.
-* The --json flag works, but the output is in AdvancedHTMLParser form.
-* JSON output is not formatted correctly.
 
 ## Upcoming Features
-##### Version v1.00
+##### Version v1.1
 * Automatic installation script for Debian/Ubuntu.
-* Polished & corrected JSON output.
-##### Version v2.00
+##### Version v2.0
 * Full compatibility with Windows hosts.
 * Automatic installation script for Windows hosts.
 * Ability to store output into text files.
