@@ -29,4 +29,3 @@ As of v1.02, JSON output is now fixed and working as intended.
 * Automatic installation script for Windows hosts.
 * Automatic installation script for Debian/Ubuntu.
 * Ability to store mScraper output into text files.
-* Ability to output only song cover artwork with "--cover".
