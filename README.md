@@ -16,12 +16,15 @@ As of v1.02, JSON output is now fixed and working as intended.
 ## Dependencies
 #### mScraper requires these libraries to be installed:
 * LXML
+* URLLIB3
 * Requests
-* OpenGraph
+* OpenGraph (sometimes called opengraph_py3 on different OS's)
+* BeautifulSoup
 * AdvancedHTMLParser
 
 ## Known Issues (as of v1.02)
 * mScraper works on Linux/macOS - it doesn't run properly on Windows hosts.
+* Windows hosts have trouble using the OpenGraph library.
 
 ## Upcoming Features
 ##### Version 2
