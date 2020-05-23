@@ -11,7 +11,8 @@ mScraper.py --cover <id> - fetch cover art from song ID.
 mScraper.py  --json <id> - fetch data in JSON format.  
 mScraper.py   --mp3 <id> - fetch MP3 from song ID.
 ```
-As of v1.02, JSON output is now fixed and working as intended.
+~As of v1.02, JSON output is now fixed and working as intended.~    
+As of v1.27, JSON output is actually fixed and working and won't break when on different OS's!
 
 ## Dependencies
 #### mScraper requires these libraries to be installed:
