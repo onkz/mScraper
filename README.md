@@ -28,7 +28,7 @@ As of v1.27, JSON output is actually fixed and working and won't break when on d
 
 ## Known Issues (as of v1.27)
 * mScraper works on Linux/macOS - it doesn't run properly on Windows hosts.
-~* Windows hosts have trouble using the OpenGraph library.~
+* ~Windows hosts have trouble using the OpenGraph library.~
 * Matter sometimes gives different JSON results based on user-agent.
 
 ## Upcoming Features
