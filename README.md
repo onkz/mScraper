@@ -5,7 +5,6 @@ mScraper will output basic song data from Matter.Online.
 The purpose of this program is to provide Matter integration functionality to any program that wishes to add it.  
 
 mScraper was developed in Python 3. It will not work in Python 2.  
-Pre-compiled binaries will soon be available.
 ```
 mScraper.py --plain <id> - fetch full song data from ID.  
 mScraper.py --cover <id> - fetch cover art from song ID.
